@@ -91,7 +91,7 @@ El archivo `.env` en la raíz del proyecto contiene:
 ```
 BASE_URL=https://www.saucedemo.com
 REQUEST_URL=https://reqres.in/api
-REQRES_API_KEY=tu_api_key_aqui
+REQRES_API_KEY=free_user_3FVjmKYF6pQrgI3DsJDgw0GyhBY
 ```
 
 ### Obtener la API key de ReqRes
