@@ -1,0 +1,27 @@
+{
+  "newUser": {
+    "name": "Test User",
+    "job": "Automation Engineer"
+  },
+  "updatedUser": {
+    "name": "Updated User",
+    "job": "Senior QA Engineer"
+  },
+  "patchUser": {
+    "job": "QA Lead"
+  },
+  "loginValid": {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+  },
+  "loginMissingPassword": {
+    "email": "eve.holt@reqres.in"
+  },
+  "registerValid": {
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+  },
+  "registerMissingPassword": {
+    "email": "sydney@fife"
+  }
+}

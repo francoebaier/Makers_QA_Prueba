@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["es2015", "dom"],
+    "types": ["cypress"],
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["**/*.cy.js", "support/**/*.js", "pages/**/*.js"]
+}
