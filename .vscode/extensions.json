@@ -16,8 +16,9 @@
     // Git
     "eamodio.gitlens",
 
-    // Markdown (README, docs)
+    // Markdown (README, docs + export a PDF)
     "yzhang.markdown-all-in-one",
+    "yzane.markdown-pdf",
 
     // Ortografía (español + inglés)
     "streetsidesoftware.code-spell-checker",
