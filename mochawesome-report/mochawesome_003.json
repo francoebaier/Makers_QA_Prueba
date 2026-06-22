@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-22T22:52:03.310Z",
+    "end": "2026-06-22T22:52:05.244Z",
+    "duration": 1934,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d139e4b6-9695-4478-9efe-037d9ed00c09",
+      "title": "",
+      "fullFile": "api\\automated-tests\\GET.cy.js",
+      "file": "api\\automated-tests\\GET.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "125dce13-ea99-496a-aabe-451ba3d319a0",
+          "title": "GET /users – Consultar usuarios",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-API-009 | GET /users?page=1 → 200 + estructura de lista paginada",
+              "fullTitle": "GET /users – Consultar usuarios TC-API-009 | GET /users?page=1 → 200 + estructura de lista paginada",
+              "timedOut": null,
+              "duration": 501,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: `${BASE}/users?page=1`,\n  headers\n}).then(res => {\n  expect(res.status).to.eq(200);\n  expect(res.body).to.have.property('page', 1);\n  expect(res.body).to.have.property('total');\n  expect(res.body.data).to.be.an('array').and.not.be.empty;\n  expect(res.headers['content-type']).to.include('application/json');\n});",
+              "err": {},
+              "uuid": "71390fe0-867e-40f6-826c-a46a6980991d",
+              "parentUUID": "125dce13-ea99-496a-aabe-451ba3d319a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-API-010 | GET /users/2 → 200 + datos del usuario existente",
+              "fullTitle": "GET /users – Consultar usuarios TC-API-010 | GET /users/2 → 200 + datos del usuario existente",
+              "timedOut": null,
+              "duration": 626,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: `${BASE}/users/2`,\n  headers\n}).then(res => {\n  expect(res.status).to.eq(200);\n  expect(res.body.data).to.have.property('id', 2);\n  expect(res.body.data).to.have.property('email');\n  expect(res.body.data).to.have.property('first_name');\n  expect(res.body.data).to.have.property('last_name');\n  expect(res.body.data).to.have.property('avatar');\n});",
+              "err": {},
+              "uuid": "4124c865-fcef-4987-95cf-6ddd7f0e7276",
+              "parentUUID": "125dce13-ea99-496a-aabe-451ba3d319a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-API-011 | GET /users/9999 → 404 usuario inexistente",
+              "fullTitle": "GET /users – Consultar usuarios TC-API-011 | GET /users/9999 → 404 usuario inexistente",
+              "timedOut": null,
+              "duration": 502,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: `${BASE}/users/9999`,\n  headers,\n  failOnStatusCode: false\n}).then(res => {\n  expect(res.status).to.eq(404);\n  expect(res.body).to.deep.eq({});\n});",
+              "err": {},
+              "uuid": "a99b47bc-3e7f-4732-9128-1ef396bbfda2",
+              "parentUUID": "125dce13-ea99-496a-aabe-451ba3d319a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-API-012 | GET /users/abc → 404 ID no numérico",
+              "fullTitle": "GET /users – Consultar usuarios TC-API-012 | GET /users/abc → 404 ID no numérico",
+              "timedOut": null,
+              "duration": 257,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: `${BASE}/users/abc`,\n  headers,\n  failOnStatusCode: false\n}).then(res => {\n  expect(res.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "2e8fa4d8-6b06-4a4c-98f9-c22f724a5bb5",
+              "parentUUID": "125dce13-ea99-496a-aabe-451ba3d319a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "71390fe0-867e-40f6-826c-a46a6980991d",
+            "4124c865-fcef-4987-95cf-6ddd7f0e7276",
+            "a99b47bc-3e7f-4732-9128-1ef396bbfda2",
+            "2e8fa4d8-6b06-4a4c-98f9-c22f724a5bb5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1886,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

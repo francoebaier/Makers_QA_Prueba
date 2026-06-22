@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-22T22:52:01.359Z",
+    "end": "2026-06-22T22:52:02.061Z",
+    "duration": 702,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1a6ac6a5-1d62-47dc-91f8-0a615bd448fc",
+      "title": "",
+      "fullFile": "api\\automated-tests\\DELETE.cy.js",
+      "file": "api\\automated-tests\\DELETE.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d9ac953a-5cfa-4466-9842-253b9c8018ba",
+          "title": "DELETE /users – Eliminar usuario",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-API-015 | DELETE /users/2 → 204 sin cuerpo de respuesta",
+              "fullTitle": "DELETE /users – Eliminar usuario TC-API-015 | DELETE /users/2 → 204 sin cuerpo de respuesta",
+              "timedOut": null,
+              "duration": 680,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'DELETE',\n  url: `${BASE}/users/2`,\n  headers\n}).then(res => {\n  expect(res.status).to.eq(204);\n});",
+              "err": {},
+              "uuid": "772b2e46-2b77-4ecb-bd98-cae7729ddea6",
+              "parentUUID": "d9ac953a-5cfa-4466-9842-253b9c8018ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "772b2e46-2b77-4ecb-bd98-cae7729ddea6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 680,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
