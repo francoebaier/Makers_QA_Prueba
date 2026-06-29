@@ -1,0 +1,158 @@
+{
+  "info": {
+    "_postman_id": "1daefd9a-d0d2-4d47-bbaf-11ad36d15ea3",
+    "name": "ReqRes-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54376568",
+    "_collection_link": "https://go.postman.co/collection/54376568-1daefd9a-d0d2-4d47-bbaf-11ad36d15ea3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "ReqRes",
+      "item": [
+        {
+          "name": "Crear usuario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Usuario creado\" , ()=> {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{key}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Test User\", \"job\": \"Automation Engineer\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://reqres.in/api/users",
+              "protocol": "https",
+              "host": [
+                "reqres",
+                "in"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verificar usuario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Verificar Usuario Creado\" , ()=>{\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "const body = pm.response.json();\r",
+                  "\r",
+                  "pm.test(\"Contenido del body\" , ()=> {\r",
+                  "    pm.expect(body.data.first_name).to.eql(\"Test User\");\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Contenido del body\" , ()=> {\r",
+                  "    pm.expect(body.data.job).to.eql(\"Automation Engineer\");\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "//La API de ReqRes es un servicio de demo de solo lectura — no tiene persistencia real.Por eso, cuando hago GET /users/{{id}}, la API no encuentra al usuario que cree anteriormente"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{dom}}/users/{{id}}",
+              "host": [
+                "{{dom}}"
+              ],
+              "path": [
+                "users",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Usuario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Eliminar usuario\" , ()=> {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{dom}}/users/{{id}}",
+              "host": [
+                "{{dom}}"
+              ],
+              "path": [
+                "users",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
